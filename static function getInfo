@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int regNo;
+    string course;
+
+public:
+    struct StudentInfo {
+        string name;
+        int regNo;
+        string course;
+    };
+
+    Student(const string& n, int reg, const string& c) : name(n), regNo(reg), course(c) {}
+
+    static StudentInfo getInfo(const Student& student) {
+        StudentInfo info;
+        info.name = student.name;
+        info.regNo = student.regNo;
+        info.course = student.course;
+        return info;
+    }
+
+    void display() const {
+        cout << "Name: " << name << endl;
+        cout << "Registration Number: " << regNo << endl;
+        cout << "Course: " << course << endl;
+    }
+};
+
+int main() {
+    string n1, c1, n2, c2;
+    int r1, r2;
+    
+    cout << "ENTER NAME, REGD NO, COURSE OF STUDENT 1:" << endl;
+    cin >> n1 >> r1 >> c1;
+    
+    cout << "ENTER NAME, REGD NO, COURSE OF STUDENT 2:" << endl;
+    cin >> n2 >> r2 >> c2;
+    
+    Student student1(n1, r1, c1);
+    Student student2(n2, r2, c2);
+
+    cout << "Student 1 Information:" << endl;
+    Student::StudentInfo info1 = Student::getInfo(student1);
+    cout << "Name: " << info1.name << endl;
+    cout << "Registration Number: " << info1.regNo << endl;
+    cout << "Course: " << info1.course << endl;
+    
+    cout << "\nStudent 2 Information:" << endl;
+    Student::StudentInfo info2 = Student::getInfo(student2);
+    cout << "Name: " << info2.name << endl;
+    cout << "Registration Number: " << info2.regNo << endl;
+    cout << "Course: " << info2.course << endl;
+    
+    return 0;
+}
