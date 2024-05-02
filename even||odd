@@ -4,12 +4,8 @@ using namespace std;
 
 int main() {
     int num;
-    
-    // Input
     cout << "Enter a number: ";
     cin >> num;
-    
-    // Checking if the number is even or odd
     if (num % 2 == 0) {
         cout << num << " is even." << endl;
     } else {
