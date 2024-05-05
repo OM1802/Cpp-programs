@@ -1,3 +1,4 @@
+// program to check if a number is prime number 
 #include <iostream>
 
 bool isPrime(int num) {
