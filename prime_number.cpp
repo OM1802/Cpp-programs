@@ -1,6 +1,5 @@
 // program to check if a number is prime number 
 #include <iostream>
-
 bool isPrime(int num) {
     if (num <= 1) {
         return false;
