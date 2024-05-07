@@ -1,3 +1,5 @@
+// code to check if a number is Armstrong number 
+
 #include <stdio.h>
 #include <math.h>
 
@@ -5,16 +7,12 @@ int isArmstrong(int num) {
     int originalNum, remainder, result = 0, n = 0;
 
     originalNum = num;
-
-    // Counting digits
     while (originalNum != 0) {
         originalNum /= 10;
         ++n;
     }
 
     originalNum = num;
-
-    // Checking if num is Armstrong
     while (originalNum != 0) {
         remainder = originalNum % 10;
         result += pow(remainder, n);
