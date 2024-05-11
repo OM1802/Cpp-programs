@@ -1,3 +1,4 @@
+//cpp cpde tp check if a number is perfect or not
 #include <iostream>
 
 bool isPerfect(int num) {
