@@ -1,3 +1,4 @@
+// code for class and objects creation
 #include <iostream>
 #include <string>
 using namespace std;
