@@ -1,3 +1,4 @@
+// cpp code to create random numbers
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
