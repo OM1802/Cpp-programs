@@ -1,22 +1,18 @@
+//switch case program to perform mathematical operation on 2 numbers
 #include <iostream>
-
 using namespace std;
 
 int main() {
     int num1, num2;
     char operation;
 
-    // Input two numbers
     cout << "Enter first number: ";
     cin >> num1;
     cout << "Enter second number: ";
     cin >> num2;
 
-    // Input operation
     cout << "Enter operation (+, -, *, /): ";
     cin >> operation;
-
-    // Switch case to perform the chosen operation
     switch (operation) {
         case '+':
             cout << "Result: " << num1 + num2 << endl;
