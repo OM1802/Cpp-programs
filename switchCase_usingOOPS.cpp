@@ -50,14 +50,14 @@ private:
 };
 
 int main() {
-    Calculator calc;
+    Calculator cal;
     double num1 = 10.0;
     double num2 = 5.0;
 
-    std::cout << "Addition: " << calc.performOperation(ADD, num1, num2) << std::endl;
-    std::cout << "Subtraction: " << calc.performOperation(SUBTRACT, num1, num2) << std::endl;
-    std::cout << "Multiplication: " << calc.performOperation(MULTIPLY, num1, num2) << std::endl;
-    std::cout << "Division: " << calc.performOperation(DIVIDE, num1, num2) << std::endl;
+    std::cout << "Addition: " << cal.performOperation(ADD, num1, num2) << std::endl;
+    std::cout << "Subtraction: " << cal.performOperation(SUBTRACT, num1, num2) << std::endl;
+    std::cout << "Multiplication: " << cal.performOperation(MULTIPLY, num1, num2) << std::endl;
+    std::cout << "Division: " << cal.performOperation(DIVIDE, num1, num2) << std::endl;
 
     return 0;
 }
