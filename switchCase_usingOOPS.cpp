@@ -1,4 +1,5 @@
-// cpp code using onject amd classes for switch case
+/* cpp code using objects and amd classes for switch case to 
+perform different mathematical operations on variables*/
 #include <iostream>
 
 enum Operation {
