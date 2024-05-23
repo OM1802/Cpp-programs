@@ -1,64 +1,66 @@
-/* cpp code using objects and amd classes for switch case to 
-perform different mathematical operations on variables*/
 #include <iostream>
+#include <string>
 
-enum Operation {
-    ADD,
-    SUBTRACT,
-    MULTIPLY,
-    DIVIDE
-};
-
-class Calculator {
-public:
-    double performOperation(Operation op, double a, double b) {
-        switch(op) {
-            case ADD:
-                return add(a, b);
-            case SUBTRACT:
-                return subtract(a, b);
-            case MULTIPLY:
-                return multiply(a, b);
-            case DIVIDE:
-                return divide(a, b);
-            default:
-                std::cerr << "Invalid operation!" << std::endl;
-                return 0.0;
-        }
-    }
-
+class Person {
 private:
-    double add(double a, double b) {
-        return a + b;
+    std::string name;
+    float weight;
+
+public:
+    Person(std::string n, float w) : name(n), weight(w) {}
+
+    float getWeight() const {
+        return weight;
     }
 
-    double subtract(double a, double b) {
-        return a - b;
-    }
-
-    double multiply(double a, double b) {
-        return a * b;
-    }
-
-    double divide(double a, double b) {
-        if (b != 0) {
-            return a / b;
+    void checkWeightCategory() const {
+        int category;
+        if (weight <= 50) {
+            category = 1;
+        } else if (weight <= 75) {
+            category = 2;
+        } else if (weight <= 100) {
+            category = 3;
+        } else if (weight <= 125) {
+            category = 4;
         } else {
-            std::cerr << "Division by zero!" << std::endl;
-            return 0.0;
+            category = 5;
+        }
+
+        switch (category) {
+            case 1:
+                std::cout << "Category A: Suitable for boat riding.\n";
+                break;
+            case 2:
+                std::cout << "Category B: Suitable for boat riding.\n";
+                break;
+            case 3:
+                std::cout << "Category C: Suitable for boat riding.\n";
+                break;
+            case 4:
+                std::cout << "Category D: Suitable for boat riding.\n";
+                break;
+            case 5:
+                std::cout << "Category E: Not suitable for boat riding.\n";
+                break;
+            default:
+                std::cout << "Invalid weight category.\n";
+                break;
         }
     }
 };
 
 int main() {
-    Calculator cal;
-    double num1 = 10.0;
-    double num2 = 5.0;
+    std::string name;
+    float weight;
 
-    std::cout << "Addition: " << cal.performOperation(ADD, num1, num2) << std::endl;
-    std::cout << "Subtraction: " << cal.performOperation(SUBTRACT, num1, num2) << std::endl;
-    std::cout << "Multiplication: " << cal.performOperation(MULTIPLY, num1, num2) << std::endl;
-    std::cout << "Division: " << cal.performOperation(DIVIDE, num1, num2) << std::endl;
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
+    std::cout << "Enter your weight (kg): ";
+    std::cin >> weight;
+
+    Person person(name, weight);
+    person.checkWeightCategory();
 
     return 0;
 }
