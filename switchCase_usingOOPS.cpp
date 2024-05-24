@@ -1,3 +1,10 @@
+/*
+Category A: 0 - 50 kg
+Category B: 51 - 75 kg
+Category C: 76 - 100 kg
+Category D: 101 - 125 kg
+Category E: 126 kg and above
+*/
 #include <iostream>
 #include <string>
 
