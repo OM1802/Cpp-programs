@@ -1,40 +1,53 @@
-// code to check if a number is Armstrong number 
+#include <iostream>
+#include <cmath>
 
-#include <stdio.h>
-#include <math.h>
+class ArmstrongChecker {
+private:
+    int number;
 
-int isArmstrong(int num) {
-    int originalNum, remainder, result = 0, n = 0;
-
-    originalNum = num;
-    while (originalNum != 0) {
-        originalNum /= 10;
-        ++n;
+    // Helper function to count the number of digits in the number
+    int countDigits(int n) {
+        int count = 0;
+        while (n != 0) {
+            n /= 10;
+            count++;
+        }
+        return count;
     }
 
-    originalNum = num;
-    while (originalNum != 0) {
-        remainder = originalNum % 10;
-        result += pow(remainder, n);
-        originalNum /= 10;
-    }
+public:
+    // Constructor to initialize the number
+    ArmstrongChecker(int num) : number(num) {}
 
-    if (result == num)
-        return 1;
-    else
-        return 0;
-}
+    // Function to check if the number is an Armstrong number
+    bool isArmstrong() {
+        int n = number;
+        int numDigits = countDigits(n);
+        int sum = 0;
+        int temp = n;
+
+        while (temp != 0) {
+            int digit = temp % 10;
+            sum += std::pow(digit, numDigits);
+            temp /= 10;
+        }
+
+        return sum == number;
+    }
+};
 
 int main() {
     int num;
+    std::cout << "Enter a number: ";
+    std::cin >> num;
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
+    ArmstrongChecker checker(num);
 
-    if (isArmstrong(num))
-        printf("%d is an Armstrong number.\n", num);
-    else
-        printf("%d is not an Armstrong number.\n", num);
+    if (checker.isArmstrong()) {
+        std::cout << num << " is an Armstrong number." << std::endl;
+    } else {
+        std::cout << num << " is not an Armstrong number." << std::endl;
+    }
 
     return 0;
 }
