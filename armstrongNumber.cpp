@@ -4,8 +4,6 @@
 class ArmstrongChecker {
 private:
     int number;
-
-    // Helper function to count the number of digits in the number
     int countDigits(int n) {
         int count = 0;
         while (n != 0) {
@@ -16,10 +14,7 @@ private:
     }
 
 public:
-    // Constructor to initialize the number
     ArmstrongChecker(int num) : number(num) {}
-
-    // Function to check if the number is an Armstrong number
     bool isArmstrong() {
         int n = number;
         int numDigits = countDigits(n);
