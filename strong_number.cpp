@@ -1,32 +1,44 @@
-#include <stdio.h>
-int factorial(int n) {
-    if (n == 0 || n == 1) 
-        return 1;
-    else 
-        return n * factorial(n - 1);
-}
-int isStrong(int num) {
-    int originalNum = num;
-    int sum = 0;
+#include <iostream>
+using namespace std;
 
-    while (num > 0) {
-        int digit = num % 10;
-        sum += factorial(digit);
-        num /= 10;
+class StrongNumber {
+public:
+    // Function to calculate factorial of a digit
+    int factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; ++i) {
+            fact *= i;
+        }
+        return fact;
     }
 
-    return (sum == originalNum);
-}
+    // Function to check if a number is a strong number
+    bool isStrongNumber(int num) {
+        int originalNum = num;
+        int sum = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            sum += factorial(digit);
+            num /= 10;
+        }
+
+        return sum == originalNum;
+    }
+};
 
 int main() {
-    int num;
-    printf("Enter a number: ");
-    scanf("%d", &num);
+    StrongNumber sn;
+    int number;
 
-    if (isStrong(num))
-        printf("%d is a strong number.\n", num);
-    else
-        printf("%d is not a strong number.\n", num);
+    cout << "Enter a number: ";
+    cin >> number;
+
+    if (sn.isStrongNumber(number)) {
+        cout << number << " is a strong number." << endl;
+    } else {
+        cout << number << " is not a strong number." << endl;
+    }
 
     return 0;
 }
