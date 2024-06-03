@@ -1,9 +1,10 @@
+//CPP code to check if a number is strong or not
 #include <iostream>
 using namespace std;
 
 class StrongNumber {
 public:
-    // Function to calculate factorial of a digit
+     
     int factorial(int n) {
         int fact = 1;
         for (int i = 1; i <= n; ++i) {
@@ -12,7 +13,7 @@ public:
         return fact;
     }
 
-    // Function to check if a number is a strong number
+    
     bool isStrongNumber(int num) {
         int originalNum = num;
         int sum = 0;
