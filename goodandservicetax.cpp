@@ -1,3 +1,4 @@
+//CPP code to calculate GST
 #include <iostream>
 using namespace std;
 class GSTCalculator {
