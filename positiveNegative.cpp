@@ -1,4 +1,4 @@
-//cpp code to find if a number is positive or negative 
+//cpp code to find if a number is positive(+) or negative(-) 
 #include <iostream>
 
 using namespace std;
