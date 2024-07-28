@@ -1,4 +1,4 @@
-// code for class and objects creation
+//cpp code for creating class and it's objects 
 #include <iostream>
 #include <string>
 using namespace std;
