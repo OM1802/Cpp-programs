@@ -22,10 +22,10 @@ Node* createBinaryTree(){
     }
     Node *root=new Node(val);
     cout<<"ENTER "<<val<<" LEFT DATA:"<<endl;
-    root->left=createBtree();
+    root->left=createBinaryTree();
 
     cout<<"ENTER "<<val<<" RIGHT DATA:"<<endl;
-    root->right=createBtree();
+    root->right=createBinaryTree();
     return root;
 }
 
